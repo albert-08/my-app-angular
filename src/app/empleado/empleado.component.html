@@ -26,13 +26,15 @@
 <br>
 <label for="empresa">Introduce la empresa del empleado:</label>
 <input type="text" name="empresa" id="empresa" #empresa (keyup)="0" [disabled]="habilitacionCuadro">
-<br>
-<button (click)="getRegistroUsuario()">Registrar</button>
-<br>
-<span>Registrado: </span><input type="checkbox" name="registro" id="registro" [checked]="usuRegistrado">
-
 
 <p>Nombre del empleado: {{nombre.value}}</p>
 <p>Apellido del empleado: {{apellido.value}}</p>
 <p>Edad del empleado: {{+edad.value < 18 ? "Menor de edad" : "Mayor de edad"}}</p>
 <p>Empresa del empleado: {{empresa.value}}</p>
+
+<button (click)="getRegistroUsuario()">Registrar</button>
+<br>
+<p>{{textoDeRegistro}}</p>
+<span>Registrado: </span><input type="radio" value="si" name="nRegistro" id="registro" [checked]="usuRegistrado" (click)="setUsuarioRegistrado($event)">
+<br>
+<span>No registrado: </span><input type="radio" value="no" name="nRegistro" id="registro" (click)="setUsuarioRegistrado($event)">
