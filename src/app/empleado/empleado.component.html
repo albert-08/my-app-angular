@@ -1,1 +1,34 @@
-<p>Aquí iría un empleado</p>
+<label for="nombre">Introduce el nombre del empleado:</label>
+<input type="text" name="nombre" id="nombre" #nombre>
+<input type="button" value="Enter" (click)="ingresarNombre(nombre.value)">
+<br>
+<label for="apellido">Introduce el apellido del empleado:</label>
+<input type="text" name="apellido" id="apellido" #apellido>
+<input type="button" value="Enter" (click)="ingresarApellido(apellido.value)">
+<br>
+<label for="edad">Introduce la edad del empleado:</label>
+<input type="text" name="edad" id="edad" #edad>
+<input type="button" value="Enter" (click)="ingresarEdad(edad.value)">
+<br>
+<label for="empresa">Introduce la empresa del empleado:</label>
+<input type="text" name="empresa" id="empresa" #empresa>
+<input type="button" value="Enter" (click)="ingresarEmpresa(empresa.value)">
+<br>
+
+<label for="nombre">Introduce el nombre del empleado:</label>
+<input type="text" name="nombre" id="nombre" #nombre (keyup)="0">
+<br>
+<label for="apellido">Introduce el apellido del empleado:</label>
+<input type="text" name="apellido" id="apellido" #apellido (keyup)="0">
+<br>
+<label for="edad">Introduce la edad del empleado:</label>
+<input type="text" name="edad" id="edad" #edad (keyup)="0">
+<br>
+<label for="empresa">Introduce la empresa del empleado:</label>
+<input type="text" name="empresa" id="empresa" #empresa (keyup)="0">
+<br>
+
+<p>Nombre del empleado: {{nombre.value}}</p>
+<p>Apellido del empleado: {{apellido.value}}</p>
+<p>Edad del empleado: {{+edad.value < 18 ? "Menor de edad" : "Mayor de edad"}}</p>
+<p>Empresa del empleado: {{empresa.value}}</p>
