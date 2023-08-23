@@ -15,22 +15,34 @@
 <input type="button" value="Enter" (click)="ingresarEmpresa(empresa.value)">
 <br>-->
 
-<label for="nombre">Introduce el nombre del empleado:</label>
+<!--<span>Introduce el nombre del empleado:</span>
 <input type="text" name="nombre" id="nombre" #nombre (keyup)="0" [disabled]="habilitacionCuadro">
 <br>
-<label for="apellido">Introduce el apellido del empleado:</label>
+<span>Introduce el apellido del empleado:</span>
 <input type="text" name="apellido" id="apellido" #apellido (keyup)="0" [disabled]="habilitacionCuadro">
 <br>
-<label for="edad">Introduce la edad del empleado:</label>
+<span>Introduce la edad del empleado:</span>
 <input type="text" name="edad" id="edad" #edad (keyup)="0" [disabled]="habilitacionCuadro">
 <br>
-<label for="empresa">Introduce la empresa del empleado:</label>
-<input type="text" name="empresa" id="empresa" #empresa (keyup)="0" [disabled]="habilitacionCuadro">
+<span>Introduce la empresa del empleado:</span>
+<input type="text" name="empresa" id="empresa" #empresa (keyup)="0" [disabled]="habilitacionCuadro">-->
 
-<p>Nombre del empleado: {{nombre.value}}</p>
-<p>Apellido del empleado: {{apellido.value}}</p>
-<p>Edad del empleado: {{+edad.value < 18 ? "Menor de edad" : "Mayor de edad"}}</p>
-<p>Empresa del empleado: {{empresa.value}}</p>
+<span>Introduce el nombre del empleado:</span>
+<input type="text" [(ngModel)]="nombre">
+<br>
+<span>Introduce el apellido del empleado:</span>
+<input type="text" [(ngModel)]="apellido">
+<br>
+<span>Introduce la edad del empleado:</span>
+<input type="text" [(ngModel)]="edad">
+<br>
+<span>Introduce la empresa del empleado:</span>
+<input type="text" [(ngModel)]="empresa">
+
+<p>Nombre del empleado: {{nombre}}</p>
+<p>Apellido del empleado: {{apellido}}</p>
+<p>Edad del empleado: {{+edad < 18 ? "Menor de edad" : "Mayor de edad"}}</p>
+<p>Empresa del empleado: {{empresa}}</p>
 
 <button (click)="getRegistroUsuario()">Registrar</button>
 <br>

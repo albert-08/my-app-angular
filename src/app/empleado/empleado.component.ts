@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
   // styles: ["p {background-color: blue;}"]
 })
 export class EmpleadoComponent {
-  // nombre = "";
-  // apellido = "";
-  // edad = 0;
-  // empresa = ""
+  nombre = "Nombre";
+  apellido = "Apellido";
+  edad = "0";
+  empresa = "Empresa"
 
   /* getEdad() {
     return this.edad;
@@ -49,5 +49,21 @@ export class EmpleadoComponent {
 
   ingresarEmpresa(value:String) {
     console.info(value);
+  }
+
+  cambiaNombre(event:Event) {
+    this.nombre=(<HTMLInputElement>event.target).value;
+  }
+
+  cambiaApellido(event:Event) {
+    this.apellido=(<HTMLInputElement>event.target).value;
+  }
+
+  cambiaEdad(event:Event) {
+    this.edad=(<HTMLInputElement>event.target).value;
+  }
+
+  cambiaEmpresa(event:Event) {
+    this.empresa=(<HTMLInputElement>event.target).value;
   }
 }
