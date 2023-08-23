@@ -17,6 +17,13 @@ export class EmpleadoComponent {
     return this.edad;
   } */
 
+  habilitacionCuadro = true;
+  usuRegistrado = false;
+
+  getRegistroUsuario() {
+    this.usuRegistrado=!this.usuRegistrado;
+  }
+
   ingresarNombre(value:String) {
     console.info(value);
   }

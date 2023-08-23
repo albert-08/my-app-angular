@@ -16,17 +16,21 @@
 <br>-->
 
 <label for="nombre">Introduce el nombre del empleado:</label>
-<input type="text" name="nombre" id="nombre" #nombre (keyup)="0">
+<input type="text" name="nombre" id="nombre" #nombre (keyup)="0" [disabled]="habilitacionCuadro">
 <br>
 <label for="apellido">Introduce el apellido del empleado:</label>
-<input type="text" name="apellido" id="apellido" #apellido (keyup)="0">
+<input type="text" name="apellido" id="apellido" #apellido (keyup)="0" [disabled]="habilitacionCuadro">
 <br>
 <label for="edad">Introduce la edad del empleado:</label>
-<input type="text" name="edad" id="edad" #edad (keyup)="0">
+<input type="text" name="edad" id="edad" #edad (keyup)="0" [disabled]="habilitacionCuadro">
 <br>
 <label for="empresa">Introduce la empresa del empleado:</label>
-<input type="text" name="empresa" id="empresa" #empresa (keyup)="0">
+<input type="text" name="empresa" id="empresa" #empresa (keyup)="0" [disabled]="habilitacionCuadro">
 <br>
+<button (click)="getRegistroUsuario()">Registrar</button>
+<br>
+<span>Registrado: </span><input type="checkbox" name="registro" id="registro" [checked]="usuRegistrado">
+
 
 <p>Nombre del empleado: {{nombre.value}}</p>
 <p>Apellido del empleado: {{apellido.value}}</p>
